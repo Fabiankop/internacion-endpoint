@@ -1,0 +1,31 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f61974b320cc
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729470
+url: "{{ base_url }}/v1/equipamiento/"
+name: "POST Customer "
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "tipo_equipamiento_id": "string",
+      "cantidad": 0,
+      "frecuencia": "string",
+      "modulo_id": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 4300
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,31 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619055d5674
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729481
+url: "{{ base_url }}/v1/{{ id_paciente }}/estudios/{{ id_estudio }}"
+name: PUT estudio
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "nombre": "string",
+      "fecha": "string",
+      "resultado": "string",
+      "url_adjunto": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 1000
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

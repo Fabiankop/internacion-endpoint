@@ -1,0 +1,26 @@
+_id: req_a8a1d981d8224633a734074e16ad6fa8
+type: Request
+parentId: fld_972ac8fbbdc44f68b33e8b223a0798aa
+modified: 1682349050328
+created: 1682104997586
+url: "{{ base_url }}/v1/recurso-asistencia/asistencia"
+name: GET asistencias
+description: ""
+method: GET
+body: {}
+parameters:
+  - id: pair_caccfdddde7447f488dab5837b804e3c
+    name: fecha
+    value: 2023-04-21
+    description: ""
+    disabled: false
+headers: []
+authentication: {}
+metaSortKey: -1682104997586
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,22 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f61945f0e475
+type: Request
+parentId: fld_wrk_df3db2fa24434beb85e51233f7e8f619037c883f
+modified: 1681919729487
+created: 1681919729487
+url: "{{ base_url }}/v1/auth/roles/batch"
+name: Batch Roles Permissions
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1681919729487
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

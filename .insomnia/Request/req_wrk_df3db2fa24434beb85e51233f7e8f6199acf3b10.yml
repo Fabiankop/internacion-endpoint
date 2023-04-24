@@ -1,0 +1,25 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6199acf3b10
+type: Request
+parentId: fld_a3c840f67a6f4e0fbcacc622837685c2
+modified: 1682103846728
+created: 1681919729461
+url: "{{ base_url }}/v1/internacion/{{ id_internacion }}"
+name: UPDATE internacion
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: "null"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 731.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,26 @@
+_id: env_env_b0d95b80b17466ea2dbd88c1382e2dc9e7d80737_sub__9c17e047
+type: Environment
+parentId: env_b0d95b80b17466ea2dbd88c1382e2dc9e7d80737
+modified: 1681922200447
+created: 1681919729495
+name: Env Test
+data:
+  scheme: http
+  base_path: ""
+  host: 127.0.0.1:8200
+  oauth2ClientId: clientId
+  oauth2ClientSecret: clientSecret
+  oauth2Username: username
+  oauth2Password: password
+dataPropertyOrder:
+  "&":
+    - scheme
+    - base_path
+    - host
+    - oauth2ClientId
+    - oauth2ClientSecret
+    - oauth2Username
+    - oauth2Password
+color: "#ffde05"
+isPrivate: false
+metaSortKey: 1681919729495

@@ -1,0 +1,21 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6190c8c9f25
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729481
+url: "{{ base_url }}/v1/{{ id_paciente }}/estudios/{{ id_estudio }}"
+name: DELETE estudio
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: 1100
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

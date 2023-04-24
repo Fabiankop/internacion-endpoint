@@ -1,0 +1,21 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619fcd5e795
+type: Request
+parentId: fld_a3c840f67a6f4e0fbcacc622837685c2
+modified: 1682103827193
+created: 1681919729459
+url: "{{ base_url }}/v1/internacion/{{ id_internacion }}"
+name: DELETE internacion
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: 756.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

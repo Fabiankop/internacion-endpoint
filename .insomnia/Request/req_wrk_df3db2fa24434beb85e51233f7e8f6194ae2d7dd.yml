@@ -1,0 +1,34 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6194ae2d7dd
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729475
+url: "{{ base_url }}/v1/prestador/"
+name: "POST Prestador "
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "razon_social": "string",
+      "sitio_web": "string",
+      "n_cuit": "string",
+      "email": "string",
+      "telefono": "string",
+      "tel_movil": "string",
+      "url_foto": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 2700
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

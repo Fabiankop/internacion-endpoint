@@ -1,0 +1,29 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f61935daaeff
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729473
+url: "{{ base_url }}/v1/especialidad/{{ id_especialidad }}"
+name: PUT especialidad
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "nombre": "string",
+      "color": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 3400
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

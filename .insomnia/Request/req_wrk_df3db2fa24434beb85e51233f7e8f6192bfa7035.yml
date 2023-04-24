@@ -1,0 +1,42 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6192bfa7035
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632554
+created: 1681919729464
+url: "{{ base_url }}/v1/recurso-asistencia/{{ id_recurso_asistencia
+  }}/asistencia/{{ id_asistencia }}"
+name: PUT asistencia por recurso_asistencia
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "es_validacion_manual": true,
+      "fecha": "2023-04-19T15:55:29.457Z",
+      "motivo": "string",
+      "registro_digitales": [
+        {
+          "observacion": "string",
+          "registro_digital_campos": [
+            {
+              "campo_id": "string",
+              "valor": "string"
+            }
+          ]
+        }
+      ]
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 5700
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

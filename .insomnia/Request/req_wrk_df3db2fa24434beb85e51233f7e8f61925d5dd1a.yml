@@ -1,0 +1,24 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f61925d5dd1a
+type: Request
+parentId: fld_wrk_df3db2fa24434beb85e51233f7e8f6192abb6437
+modified: 1681919729491
+created: 1681919729491
+url: "{{ base_url }}/v1/auth/reset-password"
+name: Reset password user
+description: ""
+method: POST
+body: {}
+parameters:
+  - name: email
+    disabled: false
+    value: user@example.com
+headers: []
+authentication: {}
+metaSortKey: -1681919729491
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

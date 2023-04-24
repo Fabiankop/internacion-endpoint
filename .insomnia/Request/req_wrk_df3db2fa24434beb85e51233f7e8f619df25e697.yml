@@ -1,0 +1,36 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619df25e697
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729479
+url: "{{ base_url }}/v1/{{ id_paciente }}/familiares/{{ id_familiar }}"
+name: PUT familiar
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "nombre": "string",
+      "apellido": "string",
+      "id_param_tipodoc": "string",
+      "num_documento": "string",
+      "sexo": "string",
+      "parentesco": "string",
+      "f_nacimiento": "string",
+      "telefono": "string",
+      "tel_movil": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 1800
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

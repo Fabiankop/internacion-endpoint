@@ -1,0 +1,21 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f61991ea2463
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729480
+url: "{{ base_url }}/v1/{{ id_paciente }}/familiares/{{ id_familiar }}"
+name: GET familiar
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: 1500
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

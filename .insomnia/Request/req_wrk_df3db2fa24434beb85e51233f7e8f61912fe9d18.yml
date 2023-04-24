@@ -1,0 +1,25 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f61912fe9d18
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729468
+url: "{{ base_url }}/v1/servicio/{{ id_servicio }}/recurso-asistencia"
+name: POST recurso por servicio
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: "null"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 4700
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

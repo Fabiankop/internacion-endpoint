@@ -1,0 +1,38 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619aec5bcf7
+type: Request
+parentId: fld_wrk_df3db2fa24434beb85e51233f7e8f6192abb6437
+modified: 1681919729490
+created: 1681919729490
+url: "{{ base_url }}/v1/auth/me"
+name: Update user information
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "display_name": "string",
+      "phone_number": "string",
+      "photo_url": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  clientId: "{{ oauth2ClientId }}"
+  grantType: password
+  scope: ""
+  type: oauth2
+  clientSecret: "{{ oauth2ClientSecret }}"
+  username: "{{ oauth2Username }}"
+  password: "{{ oauth2Password }}"
+  accessTokenUrl: /v1/auth/token
+metaSortKey: -1681919729490
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

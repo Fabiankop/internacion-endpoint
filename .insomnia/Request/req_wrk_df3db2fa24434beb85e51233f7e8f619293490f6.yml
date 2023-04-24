@@ -1,0 +1,39 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619293490f6
+type: Request
+parentId: fld_wrk_df3db2fa24434beb85e51233f7e8f619037c883f
+modified: 1681919729489
+created: 1681919729489
+url: "{{ base_url }}/v1/auth/roles"
+name: Create Roles
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "uid": "string",
+      "name": "string",
+      "display_name": "string",
+      "permissions": []
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  clientId: "{{ oauth2ClientId }}"
+  grantType: password
+  scope: ""
+  type: oauth2
+  clientSecret: "{{ oauth2ClientSecret }}"
+  username: "{{ oauth2Username }}"
+  password: "{{ oauth2Password }}"
+  accessTokenUrl: /v1/auth/token
+metaSortKey: -1681919729489
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

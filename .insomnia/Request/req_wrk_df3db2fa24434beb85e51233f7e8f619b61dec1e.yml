@@ -1,0 +1,27 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619b61dec1e
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632554
+created: 1681919729467
+url: "{{ base_url }}/v1/formulario/"
+name: get all formulario
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: skip
+    disabled: true
+    value: "0"
+  - name: limit
+    disabled: true
+    value: "100"
+headers: []
+authentication: {}
+metaSortKey: 5100
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

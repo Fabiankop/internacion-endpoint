@@ -1,0 +1,28 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6193f36b99e
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729471
+url: "{{ base_url }}/v1/insumo/"
+name: "POST Tipo Insumo "
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "nombre": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 3800
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,36 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6198419e694
+type: Request
+parentId: fld_wrk_df3db2fa24434beb85e51233f7e8f619037c883f
+modified: 1681919729488
+created: 1681919729488
+url: "{{ base_url }}/v1/auth/roles/{{ uid }}/permissions"
+name: Add Permissions Roles
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    [
+      "string"
+    ]
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  clientId: "{{ oauth2ClientId }}"
+  grantType: password
+  scope: ""
+  type: oauth2
+  clientSecret: "{{ oauth2ClientSecret }}"
+  username: "{{ oauth2Username }}"
+  password: "{{ oauth2Password }}"
+  accessTokenUrl: /v1/auth/token
+metaSortKey: -1681919729488
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

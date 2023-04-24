@@ -1,0 +1,31 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6194130bcae
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729476
+url: "{{ base_url }}/v1/financiadora/"
+name: "POST Financiadora "
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "nombres": "string",
+      "apellidos": "string",
+      "email": "user@example.com",
+      "tradi_id": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 2500
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

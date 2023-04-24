@@ -1,0 +1,25 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6196aa20125
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632554
+created: 1681919729466
+url: "{{ base_url }}/v1/formulario/{{ id_formulario }}"
+name: PUT formulario
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: "null"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 5300
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

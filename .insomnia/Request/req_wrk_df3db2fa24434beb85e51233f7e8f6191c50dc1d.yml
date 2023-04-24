@@ -1,0 +1,29 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6191c50dc1d
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729474
+url: "{{ base_url }}/v1/especialidad/"
+name: POST especialidad
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "nombre": "string",
+      "color": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 3000
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

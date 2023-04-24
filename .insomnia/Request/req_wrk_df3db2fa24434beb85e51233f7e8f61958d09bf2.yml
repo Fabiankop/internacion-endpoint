@@ -1,0 +1,35 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f61958d09bf2
+type: Request
+parentId: fld_a3c840f67a6f4e0fbcacc622837685c2
+modified: 1682103856576
+created: 1681919729463
+url: "{{ base_url }}/v1/internacion/"
+name: GET internaciones
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: skip
+    disabled: true
+    value: "0"
+  - name: limit
+    disabled: true
+    value: "100"
+headers: []
+authentication:
+  clientId: "{{ oauth2ClientId }}"
+  grantType: password
+  scope: ""
+  type: oauth2
+  clientSecret: "{{ oauth2ClientSecret }}"
+  username: "{{ oauth2Username }}"
+  password: "{{ oauth2Password }}"
+  accessTokenUrl: /v1/auth/token
+metaSortKey: 671.875
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

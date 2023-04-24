@@ -1,0 +1,620 @@
+_id: spc_e42e64b07c1a4134808d38474ff7f7a3
+type: ApiSpec
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1681919737729
+created: 1681919737720
+fileName: Internacion Domiciliaria Development 0.0.1
+contents: '{"openapi":"3.0.2","info":{"title":"Internacion Domiciliaria
+  Development","description":"App Internacion
+  Domiciliaria","contact":{"name":"Internacion","url":"http://company-example.com/","email":"info@company-example.com"},"version":"0.0.1"},"paths":{"/v1/auth/token":{"post":{"tags":["authorization"],"summary":"Login
+  Form","operationId":"token_v1_auth_token_post","requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"$ref":"#/components/schemas/Body_token_v1_auth_token_post"}}},"required":true},"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/auth/login":{"post":{"tags":["authorization"],"summary":"Login","operationId":"login_v1_auth_login_post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Login"}}},"required":true},"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseToken"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/auth/register":{"post":{"tags":["authorization"],"summary":"Register","operationId":"register_v1_auth_register_post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Login"}}},"required":true},"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseVerificationLink"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/auth/send-verify-email":{"post":{"tags":["authorization"],"summary":"Send
+  verification
+  email","operationId":"send_verify_email_v1_auth_send_verify_email_post","parameters":[{"required":true,"schema":{"title":"Email","type":"string","format":"email"},"name":"email","in":"query"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseVerificationLink"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/auth/reset-password":{"post":{"tags":["authorization"],"summary":"Reset
+  password
+  user","operationId":"reset_password_v1_auth_reset_password_post","parameters":[{"required":true,"schema":{"title":"Email","type":"string","format":"email"},"name":"email","in":"query"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseVerificationLink"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/auth/refresh-token":{"patch":{"tags":["authorization"],"summary":"Refresh
+  token","operationId":"refresh_token_v1_auth_refresh_token_patch","responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseRefreshToken"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/auth/me":{"get":{"tags":["authorization"],"summary":"User
+  information","operationId":"get_user_v1_auth_me_get","responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseUserRecord"}}}}},"security":[{"OAuth2PasswordBearer":[]}]},"put":{"tags":["authorization"],"summary":"Update
+  user
+  information","operationId":"update_user_v1_auth_me_put","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseUpdateUserRecord"}}},"required":true},"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseUserRecord"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/auth/me/roles":{"get":{"tags":["authorization"],"summary":"List
+  roles from current user
+  logged","operationId":"get_roles_v1_auth_me_roles_get","responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/auth/roles":{"get":{"tags":["roles"],"summary":"List
+  Roles","operationId":"list_roles_v1_auth_roles_get","responses":{"200":{"description":"Get
+  roles list","content":{"application/json":{"schema":{"title":"Response List
+  Roles V1 Auth Roles
+  Get","type":"array","items":{"$ref":"#/components/schemas/Role"}}}}}},"security":[{"OAuth2PasswordBearer":[]}]},"post":{"tags":["roles"],"summary":"Create
+  Roles","operationId":"create_roles_v1_auth_roles_post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Role"}}},"required":true},"responses":{"200":{"description":"Create
+  a
+  role","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Role"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/auth/roles/{uid}":{"get":{"tags":["roles"],"summary":"Get
+  Roles","operationId":"get_roles_v1_auth_roles__uid__get","parameters":[{"required":true,"schema":{"title":"Uid","type":"string"},"name":"uid","in":"path"}],"responses":{"200":{"description":"Get
+  a role by
+  uid","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Role"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]},"put":{"tags":["roles"],"summary":"Update
+  Roles","operationId":"update_roles_v1_auth_roles__uid__put","parameters":[{"required":true,"schema":{"title":"Uid","type":"string"},"name":"uid","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Role"}}},"required":true},"responses":{"200":{"description":"Update
+  a
+  role","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Role"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]},"delete":{"tags":["roles"],"summary":"Delete
+  Roles","operationId":"delete_roles_v1_auth_roles__uid__delete","parameters":[{"required":true,"schema":{"title":"Uid","type":"string"},"name":"uid","in":"path"}],"responses":{"200":{"description":"Delete
+  a
+  role","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Role"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/auth/roles/{uid}/permissions":{"post":{"tags":["roles"],"summary":"Add
+  Permissions
+  Roles","operationId":"add_permissions_roles_v1_auth_roles__uid__permissions_post","parameters":[{"required":true,"schema":{"title":"Uid","type":"string"},"name":"uid","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"title":"Payload","type":"array","items":{"type":"string"}}}},"required":true},"responses":{"200":{"description":"Assign
+  permissions list to
+  role","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Role"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/auth/roles/{uid}/users":{"post":{"tags":["roles"],"summary":"Add
+  Users
+  Roles","operationId":"add_users_roles_v1_auth_roles__uid__users_post","parameters":[{"required":true,"schema":{"title":"Uid","type":"string"},"name":"uid","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"title":"Payload","type":"array","items":{"type":"string"}}}},"required":true},"responses":{"200":{"description":"Assign
+  users list to
+  role","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Role"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/auth/roles/batch":{"post":{"tags":["roles"],"summary":"Batch
+  Roles
+  Permissions","operationId":"batch_roles_permissions_v1_auth_roles_batch_post","requestBody":{"content":{"multipart/form-data":{"schema":{"$ref":"#/components/schemas/Body_batch_roles_permissions_v1_auth_roles_batch_post"}}},"required":true},"responses":{"200":{"description":"Massive
+  loading of roles and
+  permissions","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/auth/permissions":{"get":{"tags":["permissions"],"summary":"List
+  Permissions","operationId":"list_permissions_v1_auth_permissions_get","responses":{"200":{"description":"Get
+  permissions list","content":{"application/json":{"schema":{"title":"Response
+  List Permissions V1 Auth Permissions
+  Get","type":"array","items":{"$ref":"#/components/schemas/Permission"}}}}}},"security":[{"OAuth2PasswordBearer":[]}]},"post":{"tags":["permissions"],"summary":"Create
+  Permissions","operationId":"create_permissions_v1_auth_permissions_post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Permission"}}},"required":true},"responses":{"200":{"description":"Create
+  a
+  permission","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Permission"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/auth/permissions/{uid}":{"get":{"tags":["permissions"],"summary":"Get
+  Permissions","operationId":"get_permissions_v1_auth_permissions__uid__get","parameters":[{"required":true,"schema":{"title":"Uid","type":"string"},"name":"uid","in":"path"}],"responses":{"200":{"description":"Get
+  a permission by
+  uid","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Permission"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]},"put":{"tags":["permissions"],"summary":"Update
+  Permissions","operationId":"update_permissions_v1_auth_permissions__uid__put","parameters":[{"required":true,"schema":{"title":"Uid","type":"string"},"name":"uid","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Permission"}}},"required":true},"responses":{"200":{"description":"Update
+  a
+  permission","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Permission"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]},"delete":{"tags":["permissions"],"summary":"Delete
+  Permissions","operationId":"delete_permissions_v1_auth_permissions__uid__delete","parameters":[{"required":true,"schema":{"title":"Uid","type":"string"},"name":"uid","in":"path"}],"responses":{"200":{"description":"Delete
+  a
+  permission","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Permission"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/auth/users":{"get":{"tags":["users"],"summary":"List
+  users","operationId":"list_users_v1_auth_users_get","responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response List
+  Users V1 Auth Users
+  Get","type":"array","items":{"$ref":"#/components/schemas/FirebaseUserRecord"}}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/auth/users/{user_id}":{"get":{"tags":["users"],"summary":"Get
+  User","operationId":"get_user_v1_auth_users__user_id__get","parameters":[{"required":true,"schema":{"title":"User
+  Id","type":"string"},"name":"user_id","in":"path"}],"responses":{"200":{"description":"Find
+  user","content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseUserRecord"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]},"put":{"tags":["users"],"summary":"Update
+  User","operationId":"update_user_v1_auth_users__user_id__put","parameters":[{"required":true,"schema":{"title":"User
+  Id","type":"string"},"name":"user_id","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseUpdateUserRecord"}}},"required":true},"responses":{"200":{"description":"Update
+  user","content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseUserRecord"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/auth/users/{user_id}/roles":{"post":{"tags":["users"],"summary":"Add
+  Roles","operationId":"add_roles_v1_auth_users__user_id__roles_post","parameters":[{"required":true,"schema":{"title":"User
+  Id","type":"string"},"name":"user_id","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"title":"Payload","type":"array","items":{"type":"string"}}}},"required":true},"responses":{"200":{"description":"Assign
+  roles to
+  user","content":{"application/json":{"schema":{"$ref":"#/components/schemas/FirebaseUserRecord"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/v1/paciente/":{"get":{"tags":["pacientes"],"summary":"GET
+  Pacientes","operationId":"get_all_v1_paciente__get","parameters":[{"required":false,"schema":{"title":"Skip","type":"string","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"string","default":50},"name":"limit","in":"query"},{"required":false,"schema":{"title":"Tipo
+  Documento","type":"string"},"name":"tipo_documento","in":"query"},{"required":false,"schema":{"title":"Numero
+  Documento","type":"string"},"name":"numero_documento","in":"query"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response Get All
+  V1
+  Paciente  Get","type":"array","items":{"$ref":"#/components/schemas/AllAfiliacion"}}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["pacientes"],"summary":"Post
+  Paciente","operationId":"create_v1_paciente__post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/PacienteCreate"}}},"required":true},"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Persona"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/paciente/{id_paciente}":{"get":{"tags":["pacientes"],"summary":"GET
+  Paciente","operationId":"get_by_id_v1_paciente__id_paciente__get","parameters":[{"description":"Use
+  un valor de tipo String","required":true,"schema":{"title":"Id
+  afiliacion","type":"string","description":"Use un valor de tipo
+  String"},"name":"id_paciente","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Paciente"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/{id_paciente}/estudios/":{"get":{"tags":["estudios"],"summary":"GET
+  estudios de un
+  paciente","operationId":"get_estudios_v1__id_paciente__estudios__get","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"required":false,"schema":{"title":"Skip","type":"string","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"string","default":50},"name":"limit","in":"query"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response Get
+  Estudios V1  Id
+  Paciente  Estudios  Get","type":"array","items":{"$ref":"#/components/schemas/Estudio"}}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["estudios"],"summary":"POST
+  estudios de un
+  paciente","operationId":"post_estudio_v1__id_paciente__estudios__post","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/EstudioCreate"}}},"required":true},"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Estudio"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/{id_paciente}/estudios/{id_estudio}":{"get":{"tags":["estudios"],"summary":"GET
+  estudio","operationId":"get_estudio_by_id_v1__id_paciente__estudios__id_estudio__get","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"description":"Use
+  un valor de tipo UUID","required":true,"schema":{"title":"Id
+  estudio","type":"string","description":"Use un valor de tipo
+  UUID"},"name":"id_estudio","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Estudio"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"put":{"tags":["estudios"],"summary":"PUT
+  estudio","operationId":"put_estudio_v1__id_paciente__estudios__id_estudio__put","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"description":"Use
+  un valor de tipo UUID","required":true,"schema":{"title":"Id
+  estudio","type":"string","description":"Use un valor de tipo
+  UUID"},"name":"id_estudio","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/EstudioUpdate"}}},"required":true},"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Estudio"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"delete":{"tags":["estudios"],"summary":"DELETE
+  estudio","operationId":"delete_estudio_v1__id_paciente__estudios__id_estudio__delete","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"description":"Use
+  un valor de tipo UUID","required":true,"schema":{"title":"Id
+  estudio","type":"string","description":"Use un valor de tipo
+  UUID"},"name":"id_estudio","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/{id_paciente}/familiares/":{"get":{"tags":["familiares"],"summary":"GET
+  familiares de un
+  paciente","operationId":"get_familiars_v1__id_paciente__familiares__get","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"required":false,"schema":{"title":"Skip","type":"string","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"string","default":50},"name":"limit","in":"query"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response Get
+  Familiars V1  Id
+  Paciente  Familiares  Get","type":"array","items":{"$ref":"#/components/schemas/Familiar"}}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["familiares"],"summary":"POST
+  familiars de un
+  paciente","operationId":"post_familiar_v1__id_paciente__familiares__post","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/FamiliarCreate"}}},"required":true},"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Familiar"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/{id_paciente}/familiares/{id_familiar}":{"get":{"tags":["familiares"],"summary":"GET
+  familiar","operationId":"get_familiar_by_id_v1__id_paciente__familiares__id_familiar__get","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"description":"Use
+  un valor de tipo UUID","required":true,"schema":{"title":"Id
+  familiar","type":"string","description":"Use un valor de tipo
+  UUID"},"name":"id_familiar","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Familiar"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"put":{"tags":["familiares"],"summary":"PUT
+  familiar","operationId":"put_familiar_v1__id_paciente__familiares__id_familiar__put","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"description":"Use
+  un valor de tipo UUID","required":true,"schema":{"title":"Id
+  familiar","type":"string","description":"Use un valor de tipo
+  UUID"},"name":"id_familiar","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/FamiliarUpdate"}}},"required":true},"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Familiar"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"delete":{"tags":["familiares"],"summary":"DELETE
+  familiar","operationId":"delete_familiar_v1__id_paciente__familiares__id_familiar__delete","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"description":"Use
+  un valor de tipo UUID","required":true,"schema":{"title":"Id
+  familiar","type":"string","description":"Use un valor de tipo
+  UUID"},"name":"id_familiar","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/{id_paciente}/documentos/":{"get":{"tags":["documentos"],"summary":"GET
+  documentos de un
+  paciente","operationId":"get_documentos_v1__id_paciente__documentos__get","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"required":false,"schema":{"title":"Skip","type":"string","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"string","default":50},"name":"limit","in":"query"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response Get
+  Documentos V1  Id
+  Paciente  Documentos  Get","type":"array","items":{"$ref":"#/components/schemas/Documento"}}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["documentos"],"summary":"POST
+  documento de un
+  paciente","operationId":"post_documento_v1__id_paciente__documentos__post","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/DocumentoCreate"}}},"required":true},"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Documento"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/{id_paciente}/documentos/{id_documento}":{"get":{"tags":["documentos"],"summary":"GET
+  documento","operationId":"get_documento_by_id_v1__id_paciente__documentos__id_documento__get","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"description":"Use
+  un valor de tipo UUID","required":true,"schema":{"title":"Id
+  documento","type":"string","description":"Use un valor de tipo
+  UUID"},"name":"id_documento","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Documento"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"put":{"tags":["documentos"],"summary":"PUT
+  documento","operationId":"put_documento_v1__id_paciente__documentos__id_documento__put","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"description":"Use
+  un valor de tipo UUID","required":true,"schema":{"title":"Id
+  documento","type":"string","description":"Use un valor de tipo
+  UUID"},"name":"id_documento","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/DocumentoUpdate"}}},"required":true},"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Documento"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"delete":{"tags":["documentos"],"summary":"DELETE
+  documento","operationId":"delete_documento_v1__id_paciente__documentos__id_documento__delete","parameters":[{"required":true,"schema":{"title":"Id
+  Paciente","type":"string"},"name":"id_paciente","in":"path"},{"description":"Use
+  un valor de tipo UUID","required":true,"schema":{"title":"Id
+  documento","type":"string","description":"Use un valor de tipo
+  UUID"},"name":"id_documento","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/persona/":{"get":{"tags":["persona"],"summary":"GET
+  Afiliaciones","operationId":"get_person_by_document_v1_persona__get","parameters":[{"required":false,"schema":{"title":"Tipo
+  Documento","type":"string"},"name":"tipo_documento","in":"query"},{"required":false,"schema":{"title":"Numero
+  Documento","type":"string"},"name":"numero_documento","in":"query"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response Get
+  Person By Document V1
+  Persona  Get","type":"array","items":{"$ref":"#/components/schemas/Persona"}}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/financiadora/":{"get":{"tags":["financiadora"],"summary":"GET
+  Financiadoras
+  ","operationId":"get_all_v1_financiadora__get","parameters":[{"required":false,"schema":{"title":"Skip","type":"integer","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"integer","default":100},"name":"limit","in":"query"}],"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["financiadora"],"summary":"POST
+  Financiadora
+  ","operationId":"create_financiadora_v1_financiadora__post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/FinanciadoraCreate"}}},"required":true},"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/financiadora/{id_financiadora}":{"get":{"tags":["financiadora"],"summary":"GET
+  BY ID Financiador
+  ","operationId":"get_by_id_v1_financiadora__id_financiadora__get","parameters":[{"required":true,"schema":{"title":"Id
+  Financiadora","type":"string","format":"uuid"},"name":"id_financiadora","in":"path"}],"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/afiliacion/":{"get":{"tags":["afiliacion"],"summary":"GET
+  Afiliaciones","operationId":"get_all_v1_afiliacion__get","parameters":[{"required":false,"schema":{"title":"Skip","type":"integer","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"integer","default":100},"name":"limit","in":"query"},{"required":false,"schema":{"title":"Tipo
+  Documento","type":"string"},"name":"tipo_documento","in":"query"},{"required":false,"schema":{"title":"Numero
+  Documento","type":"string"},"name":"numero_documento","in":"query"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response Get All
+  V1
+  Afiliacion  Get","type":"array","items":{"$ref":"#/components/schemas/Afiliacion"}}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/prestador/":{"get":{"tags":["prestador"],"summary":"GET
+  prestadores
+  ","operationId":"get_all_v1_prestador__get","parameters":[{"required":false,"schema":{"title":"Skip","type":"integer","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"integer","default":100},"name":"limit","in":"query"}],"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["prestador"],"summary":"POST
+  Prestador ","description":"Creacion de
+  Prestador","operationId":"create_prestador_v1_prestador__post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/PrestadorCreate"}}},"required":true},"responses":{"201":{"description":"Prestador
+  creado","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/prestador/{id_prestador}":{"get":{"tags":["prestador"],"summary":"GET
+  BY ID Prestador
+  ","operationId":"get_by_id_v1_prestador__id_prestador__get","parameters":[{"required":true,"schema":{"title":"Id
+  Prestador","type":"string","format":"uuid"},"name":"id_prestador","in":"path"}],"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/especialidad/":{"get":{"tags":["especialidad"],"summary":"GET
+  Especialidades","operationId":"get_especialidad_v1_especialidad__get","parameters":[{"required":false,"schema":{"title":"Skip","type":"integer","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"integer","default":100},"name":"limit","in":"query"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response Get
+  Especialidad V1
+  Especialidad  Get","type":"array","items":{"$ref":"#/components/schemas/Especialidad"}}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["especialidad"],"summary":"POST
+  especialidad","operationId":"create_especialidad_v1_especialidad__post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/EspecialidadCreate"}}},"required":true},"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Especialidad"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/especialidad/{id_especialidad}":{"get":{"tags":["especialidad"],"summary":"Get
+  especialidad","operationId":"get_especialidad_by_id_v1_especialidad__id_especialidad__get","parameters":[{"required":true,"schema":{"title":"Id
+  Especialidad","type":"string","format":"uuid"},"name":"id_especialidad","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Especialidad"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"put":{"tags":["especialidad"],"summary":"PUT
+  especialidad","operationId":"update_especialidad_v1_especialidad__id_especialidad__put","parameters":[{"required":true,"schema":{"title":"Id
+  Especialidad","type":"string","format":"uuid"},"name":"id_especialidad","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/EspecialidadUpdate"}}},"required":true},"responses":{"202":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Especialidad"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"delete":{"tags":["especialidad"],"summary":"Delete
+  a
+  especialidad","operationId":"delete_especialidad_v1_especialidad__id_especialidad__delete","parameters":[{"required":true,"schema":{"title":"Id
+  Especialidad","type":"string","format":"uuid"},"name":"id_especialidad","in":"path"}],"responses":{"204":{"description":"Successful
+  Response"},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/insumo/":{"get":{"tags":["insumo"],"summary":"GET
+  Insumo
+  ","operationId":"get_all_v1_insumo__get","parameters":[{"required":false,"schema":{"title":"Skip","type":"integer","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"integer","default":100},"name":"limit","in":"query"}],"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"put":{"tags":["insumo"],"summary":"POST
+  Customer ","description":"Customer
+  Client","operationId":"update_insumo_v1_insumo__put","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/InsumoUpdate"}}},"required":true},"responses":{"201":{"description":"Insumo
+  creado","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["insumo"],"summary":"POST
+  Tipo Insumo
+  ","operationId":"create_tipo_insumo_v1_insumo__post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/TipoInsumoCreate"}}},"required":true},"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/InsumoBase"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/insumo/{id_financiadora}":{"get":{"tags":["insumo"],"summary":"GET
+  BY ID Insumo
+  ","operationId":"get_by_id_v1_insumo__id_financiadora__get","parameters":[{"required":true,"schema":{"title":"Id
+  Modulo","type":"string","format":"uuid"},"name":"id_modulo","in":"query"}],"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/equipamiento/":{"get":{"tags":["equipamiento"],"summary":"GET
+  Equipamientos
+  ","operationId":"get_all_v1_equipamiento__get","parameters":[{"required":false,"schema":{"title":"Skip","type":"integer","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"integer","default":100},"name":"limit","in":"query"}],"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"put":{"tags":["equipamiento"],"summary":"POST
+  Customer ","description":"Customer
+  Client","operationId":"update_equipamiento_v1_equipamiento__put","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/EquipamientoUpdate"}}},"required":true},"responses":{"201":{"description":"Equipamiento
+  creado","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["equipamiento"],"summary":"POST
+  Modulo con nombre y color
+  ","operationId":"create_equipamiento_v1_equipamiento__post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/EquipamientoCreate"}}},"required":true},"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/EquipamientoBase"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/equipamiento/{id_financiadora}":{"get":{"tags":["equipamiento"],"summary":"GET
+  BY ID Financiador
+  ","operationId":"get_by_id_v1_equipamiento__id_financiadora__get","parameters":[{"required":true,"schema":{"title":"Id
+  Equipamiento","type":"string","format":"uuid"},"name":"id_equipamiento","in":"query"}],"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/modulo/":{"get":{"tags":["modulo"],"summary":"GET
+  Modulos
+  ","operationId":"get_all_v1_modulo__get","parameters":[{"required":false,"schema":{"title":"Skip","type":"integer","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"integer","default":100},"name":"limit","in":"query"}],"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["modulo"],"summary":"POST
+  Modulo con nombre y color
+  ","operationId":"create_modulo_v1_modulo__post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ModuloCreate"}}},"required":true},"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/modulo/{id_financiadora}":{"get":{"tags":["modulo"],"summary":"GET
+  BY ID Modulos
+  ","operationId":"get_by_id_v1_modulo__id_financiadora__get","parameters":[{"required":true,"schema":{"title":"Id
+  Modulo","type":"string","format":"uuid"},"name":"id_modulo","in":"query"}],"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/servicio/{id_servicio}/recurso-asistencia":{"get":{"tags":["servicio"],"summary":"GET
+  recursos asistencia por
+  servicio","operationId":"get_recursos_v1_servicio__id_servicio__recurso_asistencia_get","parameters":[{"required":true,"schema":{"title":"Id
+  Servicio","type":"string","format":"uuid"},"name":"id_servicio","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response Get
+  Recursos V1 Servicio  Id Servicio  Recurso Asistencia
+  Get","type":"array","items":{"$ref":"#/components/schemas/RecursoAsistencia"}}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["servicio"],"summary":"POST
+  recurso por
+  servicio","operationId":"create_v1_servicio__id_servicio__recurso_asistencia_post","parameters":[{"required":true,"schema":{"title":"Id
+  Servicio","type":"string","format":"uuid"},"name":"id_servicio","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"title":"Recurso
+  Asistencia","anyOf":[{"$ref":"#/components/schemas/RecursoAsistenciaCreate"},{"$ref":"#/components/schemas/RecursoAsistenciaUpdate"}]}}},"required":true},"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/RecursoAsistencia"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/servicio/{id_servicio}/recurso-asistencia/{id_recurso_asistencia}":{"get":{"tags":["servicio"],"summary":"GET
+  recursos por id de un
+  servicio","operationId":"get_by_recurso_id_v1_servicio__id_servicio__recurso_asistencia__id_recurso_asistencia__get","parameters":[{"required":true,"schema":{"title":"Id
+  Servicio","type":"string","format":"uuid"},"name":"id_servicio","in":"path"},{"required":true,"schema":{"title":"Id
+  Recurso
+  Asistencia","type":"string","format":"uuid"},"name":"id_recurso_asistencia","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/RecursoAsistencia"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/formulario/":{"get":{"tags":["formulario"],"summary":"get
+  all
+  formulario","operationId":"get_formulario_v1_formulario__get","parameters":[{"required":false,"schema":{"title":"Skip","type":"integer","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"integer","default":100},"name":"limit","in":"query"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response Get
+  Formulario V1
+  Formulario  Get","type":"array","items":{"$ref":"#/components/schemas/Formulario"}}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["formulario"],"summary":"POST
+  formulario","operationId":"create_formulario_v1_formulario__post","requestBody":{"content":{"application/json":{"schema":{"title":"Formulario","anyOf":[{"$ref":"#/components/schemas/FormularioCreate"},{"$ref":"#/components/schemas/FormularioUpdate"}]}}},"required":true},"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Formulario"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/formulario/{id_formulario}":{"get":{"tags":["formulario"],"summary":"get
+  a
+  formulario","operationId":"get_formulario_v1_formulario__id_formulario__get","parameters":[{"required":true,"schema":{"title":"Id
+  Formulario","type":"string","format":"uuid"},"name":"id_formulario","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Formulario"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"put":{"tags":["formulario"],"summary":"PUT
+  formulario","operationId":"update_formulario_v1_formulario__id_formulario__put","parameters":[{"required":true,"schema":{"title":"Id
+  Formulario","type":"string","format":"uuid"},"name":"id_formulario","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"title":"Formulario","anyOf":[{"$ref":"#/components/schemas/FormularioCreate"},{"$ref":"#/components/schemas/FormularioUpdate"}]}}},"required":true},"responses":{"202":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Formulario"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"delete":{"tags":["formulario"],"summary":"Delete
+  a
+  formulario","operationId":"delete_formulario_v1_formulario__id_formulario__delete","parameters":[{"required":true,"schema":{"title":"Id
+  Formulario","type":"string","format":"uuid"},"name":"id_formulario","in":"path"}],"responses":{"204":{"description":"Successful
+  Response"},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/recurso-asistencia/{id_recurso_asistencia}/asistencia":{"get":{"tags":["asistencia"],"summary":"GET
+  all asistencia by recurso
+  asistencia","operationId":"get_all_v1_recurso_asistencia__id_recurso_asistencia__asistencia_get","parameters":[{"required":true,"schema":{"title":"Id
+  Recurso
+  Asistencia","type":"string","format":"uuid"},"name":"id_recurso_asistencia","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response Get All
+  V1 Recurso Asistencia  Id Recurso Asistencia  Asistencia
+  Get","type":"array","items":{"$ref":"#/components/schemas/Asistencia"}}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"post":{"tags":["asistencia"],"summary":"POST
+  asistencia por
+  recurso_asistencia","operationId":"create_v1_recurso_asistencia__id_recurso_asistencia__asistencia_post","parameters":[{"required":true,"schema":{"title":"Id
+  Recurso
+  Asistencia","type":"string","format":"uuid"},"name":"id_recurso_asistencia","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"title":"Asistencia","anyOf":[{"$ref":"#/components/schemas/AsistenciaCreate"},{"$ref":"#/components/schemas/AsistenciaUpdate"}]}}},"required":true},"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Asistencia"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/recurso-asistencia/{id_recurso_asistencia}/asistencia/{id_asistencia}":{"get":{"tags":["asistencia"],"summary":"GET
+  asistencia por
+  id","operationId":"get_by_id_v1_recurso_asistencia__id_recurso_asistencia__asistencia__id_asistencia__get","parameters":[{"required":true,"schema":{"title":"Id
+  Recurso
+  Asistencia","type":"string","format":"uuid"},"name":"id_recurso_asistencia","in":"path"},{"required":true,"schema":{"title":"Id
+  Asistencia","type":"string","format":"uuid"},"name":"id_asistencia","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Asistencia"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"put":{"tags":["asistencia"],"summary":"PUT
+  asistencia por
+  recurso_asistencia","operationId":"create_v1_recurso_asistencia__id_recurso_asistencia__asistencia__id_asistencia__put","parameters":[{"required":true,"schema":{"title":"Id
+  Recurso
+  Asistencia","type":"string","format":"uuid"},"name":"id_recurso_asistencia","in":"path"},{"required":true,"schema":{"title":"Id
+  Asistencia","type":"string","format":"uuid"},"name":"id_asistencia","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/AsistenciaUpdate"}}},"required":true},"responses":{"202":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Asistencia"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/internacion/":{"get":{"tags":["internacion"],"summary":"GET
+  internaciones","operationId":"get_all_v1_internacion__get","parameters":[{"required":false,"schema":{"title":"Skip","type":"integer","default":0},"name":"skip","in":"query"},{"required":false,"schema":{"title":"Limit","type":"integer","default":100},"name":"limit","in":"query"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"title":"Response Get All
+  V1
+  Internacion  Get","type":"array","items":{"$ref":"#/components/schemas/Internacion"}}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]},"post":{"tags":["internacion"],"summary":"POST
+  internacion
+  ","operationId":"create_internacion_v1_internacion__post","requestBody":{"content":{"application/json":{"schema":{"title":"Internacion","anyOf":[{"$ref":"#/components/schemas/InternacionCreate"},{"$ref":"#/components/schemas/InternacionUpdate"}]}}},"required":true},"responses":{"201":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Internacion"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/v1/internacion/{id_internacion}":{"get":{"tags":["internacion"],"summary":"GET
+  BY ID internacion
+  ","operationId":"get_by_id_v1_internacion__id_internacion__get","parameters":[{"required":true,"schema":{"title":"Id
+  Internacion","type":"string","format":"uuid"},"name":"id_internacion","in":"path"}],"responses":{"200":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Internacion"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"put":{"tags":["internacion"],"summary":"UPDATE
+  internacion","operationId":"update_internacion_v1_internacion__id_internacion__put","parameters":[{"required":true,"schema":{"title":"Id
+  Internacion","type":"string","format":"uuid"},"name":"id_internacion","in":"path"}],"requestBody":{"content":{"application/json":{"schema":{"title":"Internacion","anyOf":[{"$ref":"#/components/schemas/InternacionCreate"},{"$ref":"#/components/schemas/InternacionUpdate"}]}}},"required":true},"responses":{"202":{"description":"Successful
+  Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Internacion"}}}},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}},"delete":{"tags":["internacion"],"summary":"DELETE
+  internacion","operationId":"delete_internacion_v1_internacion__id_internacion__delete","parameters":[{"required":true,"schema":{"title":"Id
+  Internacion","type":"string","format":"uuid"},"name":"id_internacion","in":"path"}],"responses":{"204":{"description":"Successful
+  Response"},"422":{"description":"Validation
+  Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}}},"components":{"schemas":{"Afiliacion":{"title":"Afiliacion","required":["id","codigo","nombre","apellido","email","doc_personales"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"codigo":{"title":"Codigo","type":"string"},"nombre":{"title":"Nombre","type":"string"},"apellido":{"title":"Apellido","type":"string"},"email":{"title":"Email","type":"string","format":"email"},"doc_personales":{"title":"Doc
+  Personales","type":"array","items":{}},"familiares":{"title":"Familiares","type":"array","items":{}},"doc_clinicos":{"title":"Doc
+  Clinicos","type":"array","items":{}},"est_medicos":{"title":"Est
+  Medicos","type":"array","items":{}}}},"AllAfiliacion":{"title":"AllAfiliacion","required":["id","codigo","nombre","apellido","email","doc_personales"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"codigo":{"title":"Codigo","type":"string"},"nombre":{"title":"Nombre","type":"string"},"apellido":{"title":"Apellido","type":"string"},"email":{"title":"Email","type":"string","format":"email"},"doc_personales":{"title":"Doc
+  Personales","type":"array","items":{}}}},"Asistencia":{"title":"Asistencia","required":["id","es_validacion_manual","fecha","motivo","registro_digitales"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"es_validacion_manual":{"title":"Es
+  Validacion
+  Manual","type":"boolean"},"fecha":{"title":"Fecha","type":"string","format":"date-time"},"motivo":{"title":"Motivo","type":"string"},"registro_digitales":{"title":"Registro
+  Digitales","type":"array","items":{"$ref":"#/components/schemas/RegistroDigital"}}}},"AsistenciaCreate":{"title":"AsistenciaCreate","required":["es_validacion_manual","fecha","motivo","registro_digitales"],"type":"object","properties":{"es_validacion_manual":{"title":"Es
+  Validacion
+  Manual","type":"boolean"},"fecha":{"title":"Fecha","type":"string","format":"date-time"},"motivo":{"title":"Motivo","type":"string"},"registro_digitales":{"title":"Registro
+  Digitales","type":"array","items":{"$ref":"#/components/schemas/RegistroDigitalCreate"}}}},"AsistenciaUpdate":{"title":"AsistenciaUpdate","type":"object","properties":{"es_validacion_manual":{"title":"Es
+  Validacion
+  Manual","type":"boolean"},"fecha":{"title":"Fecha","type":"string","format":"date-time"},"motivo":{"title":"Motivo","type":"string"},"registro_digitales":{"title":"Registro
+  Digitales","type":"array","items":{"$ref":"#/components/schemas/RegistroDigitalUpdate"}}}},"Body_batch_roles_permissions_v1_auth_roles_batch_post":{"title":"Body_batch_roles_permissions_v1_auth_roles_batch_post","required":["file"],"type":"object","properties":{"file":{"title":"File","type":"string","format":"binary"}}},"Body_token_v1_auth_token_post":{"title":"Body_token_v1_auth_token_post","required":["username","password"],"type":"object","properties":{"grant_type":{"title":"Grant
+  Type","pattern":"password","type":"string"},"username":{"title":"Username","type":"string"},"password":{"title":"Password","type":"string"},"scope":{"title":"Scope","type":"string","default":""},"client_id":{"title":"Client
+  Id","type":"string"},"client_secret":{"title":"Client
+  Secret","type":"string"}}},"Campo":{"title":"Campo","required":["id","clave","tipo_clave","validacion"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"clave":{"title":"Clave","type":"string"},"tipo_clave":{"title":"Tipo
+  Clave","type":"string"},"validacion":{"title":"Validacion","type":"string"}}},"CampoCreate":{"title":"CampoCreate","required":["clave","tipo_clave","validacion"],"type":"object","properties":{"clave":{"title":"Clave","type":"string"},"tipo_clave":{"title":"Tipo
+  Clave","type":"string"},"validacion":{"title":"Validacion","type":"string"},"id":{"title":"Id","type":"string","format":"uuid"}}},"CampoUpdate":{"title":"CampoUpdate","type":"object","properties":{"clave":{"title":"Clave","type":"string"},"tipo_clave":{"title":"Tipo
+  Clave","type":"string"},"validacion":{"title":"Validacion","type":"string"},"id":{"title":"Id","type":"string","format":"uuid"}}},"DiagnosticoCreate":{"title":"DiagnosticoCreate","required":["codigo","descripcion"],"type":"object","properties":{"codigo":{"title":"Codigo","type":"string"},"descripcion":{"title":"Descripcion","type":"string"},"f_inicio":{"title":"F
+  Inicio","type":"string","format":"date"}}},"DiagnosticoUpdate":{"title":"DiagnosticoUpdate","type":"object","properties":{"codigo":{"title":"Codigo","type":"string"},"descripcion":{"title":"Descripcion","type":"string"},"f_inicio":{"title":"F
+  Inicio","type":"string","format":"date"},"internacion_id":{"title":"Internacion
+  Id","type":"string","format":"uuid"},"id":{"title":"Id","type":"string","format":"uuid"}}},"Documento":{"title":"Documento","required":["nombre","fecha","url_adjunto"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"nombre":{"title":"Nombre","type":"string"},"fecha":{"title":"Fecha","type":"string","format":"date"},"url_adjunto":{"title":"Url
+  Adjunto","type":"string"}}},"DocumentoCreate":{"title":"DocumentoCreate","required":["nombre","fecha","url_adjunto"],"type":"object","properties":{"nombre":{"title":"Nombre","type":"string"},"fecha":{"title":"Fecha","type":"string","format":"date"},"url_adjunto":{"title":"Url
+  Adjunto","type":"string"}}},"DocumentoUpdate":{"title":"DocumentoUpdate","type":"object","properties":{"nombre":{"title":"Nombre","type":"string"},"fecha":{"title":"Fecha","type":"string","format":"date"},"url_adjunto":{"title":"Url
+  Adjunto","type":"string"}}},"Efector":{"title":"Efector","required":["id","persona_id","matricula_id","especialidad_id","num_efector","email","persona"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"persona_id":{"title":"Persona
+  Id","type":"string","format":"uuid"},"matricula_id":{"title":"Matricula
+  Id","type":"string","format":"uuid"},"especialidad_id":{"title":"Especialidad
+  Id","type":"string","format":"uuid"},"num_efector":{"title":"Num
+  Efector","type":"string"},"email":{"title":"Email","type":"string","format":"email"},"persona":{"$ref":"#/components/schemas/Persona"}}},"EquipamientoBase":{"title":"EquipamientoBase","required":["tipo_equipamiento_id","cantidad","frecuencia"],"type":"object","properties":{"tipo_equipamiento_id":{"title":"Tipo
+  Equipamiento
+  Id","type":"string"},"cantidad":{"title":"Cantidad","type":"integer"},"frecuencia":{"title":"Frecuencia","type":"string"}}},"EquipamientoCreate":{"title":"EquipamientoCreate","required":["tipo_equipamiento_id","cantidad","frecuencia"],"type":"object","properties":{"tipo_equipamiento_id":{"title":"Tipo
+  Equipamiento
+  Id","type":"string"},"cantidad":{"title":"Cantidad","type":"integer"},"frecuencia":{"title":"Frecuencia","type":"string"}}},"EquipamientoUpdate":{"title":"EquipamientoUpdate","type":"object","properties":{"tipo_equipamiento_id":{"title":"Tipo
+  Equipamiento
+  Id","type":"string"},"cantidad":{"title":"Cantidad","type":"integer"},"frecuencia":{"title":"Frecuencia","type":"string"},"modulo_id":{"title":"Modulo
+  Id","type":"string"}}},"Especialidad":{"title":"Especialidad","required":["id","nombre","color","financiadora_id"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"nombre":{"title":"Nombre","type":"string"},"color":{"title":"Color","type":"string"},"financiadora_id":{"title":"Financiadora
+  Id","type":"string","format":"uuid"}}},"EspecialidadCreate":{"title":"EspecialidadCreate","required":["nombre","color"],"type":"object","properties":{"nombre":{"title":"Nombre","type":"string"},"color":{"title":"Color","type":"string"}}},"EspecialidadUpdate":{"title":"EspecialidadUpdate","type":"object","properties":{"nombre":{"title":"Nombre","type":"string"},"color":{"title":"Color","type":"string"}}},"Estudio":{"title":"Estudio","required":["nombre","fecha","resultado","url_adjunto"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"nombre":{"title":"Nombre","type":"string"},"fecha":{"title":"Fecha","type":"string","format":"date"},"resultado":{"title":"Resultado","type":"string"},"url_adjunto":{"title":"Url
+  Adjunto","type":"string"}}},"EstudioCreate":{"title":"EstudioCreate","required":["nombre","fecha","resultado","url_adjunto"],"type":"object","properties":{"nombre":{"title":"Nombre","type":"string"},"fecha":{"title":"Fecha","type":"string","format":"date"},"resultado":{"title":"Resultado","type":"string"},"url_adjunto":{"title":"Url
+  Adjunto","type":"string"}}},"EstudioUpdate":{"title":"EstudioUpdate","required":["nombre","fecha","resultado","url_adjunto"],"type":"object","properties":{"nombre":{"title":"Nombre","type":"string"},"fecha":{"title":"Fecha","type":"string","format":"date"},"resultado":{"title":"Resultado","type":"string"},"url_adjunto":{"title":"Url
+  Adjunto","type":"string"}}},"Familiar":{"title":"Familiar","required":["nombre","apellido","id_param_tipodoc","num_documento","sexo","parentesco","f_nacimiento","telefono","tel_movil","persona"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"nombre":{"title":"Nombre","type":"string"},"apellido":{"title":"Apellido","type":"string"},"id_param_tipodoc":{"title":"Id
+  Param Tipodoc","type":"string"},"num_documento":{"title":"Num
+  Documento","type":"string"},"sexo":{"title":"Sexo","type":"string"},"parentesco":{"$ref":"#/components/schemas/ParentescoTypes"},"f_nacimiento":{"title":"F
+  Nacimiento","type":"string","format":"date"},"telefono":{"title":"Telefono","type":"string"},"tel_movil":{"title":"Tel
+  Movil","type":"string"},"afiliado_id":{"title":"Afiliado
+  Id","type":"string","format":"uuid"},"persona":{"$ref":"#/components/schemas/Persona"}}},"FamiliarCreate":{"title":"FamiliarCreate","required":["nombre","apellido","parentesco","tel_movil"],"type":"object","properties":{"nombre":{"title":"Nombre","type":"string"},"apellido":{"title":"Apellido","type":"string"},"id_param_tipodoc":{"title":"Id
+  Param Tipodoc","type":"string"},"num_documento":{"title":"Num
+  Documento","type":"string"},"sexo":{"title":"Sexo","type":"string"},"parentesco":{"$ref":"#/components/schemas/ParentescoTypes"},"f_nacimiento":{"title":"F
+  Nacimiento","type":"string","format":"date"},"telefono":{"title":"Telefono","type":"string"},"tel_movil":{"title":"Tel
+  Movil","type":"string"}}},"FamiliarUpdate":{"title":"FamiliarUpdate","required":["nombre","apellido","id_param_tipodoc","num_documento","sexo","parentesco","f_nacimiento","telefono","tel_movil"],"type":"object","properties":{"nombre":{"title":"Nombre","type":"string"},"apellido":{"title":"Apellido","type":"string"},"id_param_tipodoc":{"title":"Id
+  Param Tipodoc","type":"string"},"num_documento":{"title":"Num
+  Documento","type":"string"},"sexo":{"title":"Sexo","type":"string"},"parentesco":{"$ref":"#/components/schemas/ParentescoTypes"},"f_nacimiento":{"title":"F
+  Nacimiento","type":"string","format":"date"},"telefono":{"title":"Telefono","type":"string"},"tel_movil":{"title":"Tel
+  Movil","type":"string"}}},"Financiadora":{"title":"Financiadora","required":["id","nombres","apellidos","email"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"nombres":{"title":"Nombres","type":"string"},"apellidos":{"title":"Apellidos","type":"string"},"email":{"title":"Email","type":"string","format":"email"},"firebase_uid":{"title":"Firebase
+  Uid","type":"string"}}},"FinanciadoraCreate":{"title":"FinanciadoraCreate","required":["nombres","apellidos","email"],"type":"object","properties":{"nombres":{"title":"Nombres","type":"string"},"apellidos":{"title":"Apellidos","type":"string"},"email":{"title":"Email","type":"string","format":"email"},"tradi_id":{"title":"Tradi
+  Id","type":"string","format":"uuid"}}},"FirebaseRefreshToken":{"title":"FirebaseRefreshToken","required":["token"],"type":"object","properties":{"token":{"title":"Token","type":"string"}}},"FirebaseToken":{"title":"FirebaseToken","required":["email","idToken"],"type":"object","properties":{"kind":{"title":"Kind","type":"string"},"localId":{"title":"Localid","type":"string"},"email":{"title":"Email","type":"string","format":"email"},"displayName":{"title":"Displayname","type":"string"},"registered":{"title":"Registered","type":"boolean","default":true},"idToken":{"title":"Idtoken","type":"string"},"refreshToken":{"title":"Refreshtoken","type":"string"},"expiresIn":{"title":"Expiresin","type":"integer","default":3600}}},"FirebaseUpdateUserRecord":{"title":"FirebaseUpdateUserRecord","type":"object","properties":{"display_name":{"title":"Display
+  Name","type":"string"},"phone_number":{"title":"Phone
+  Number","type":"string"},"photo_url":{"title":"Photo
+  Url","type":"string"}}},"FirebaseUserRecord":{"title":"FirebaseUserRecord","required":["uid","email","email_verified","disabled","tokens_valid_after_timestamp"],"type":"object","properties":{"uid":{"title":"Uid","type":"string"},"display_name":{"title":"Display
+  Name","type":"string"},"email":{"title":"Email","type":"string","format":"email"},"phone_number":{"title":"Phone
+  Number","type":"string"},"photo_url":{"title":"Photo
+  Url","type":"string"},"email_verified":{"title":"Email
+  Verified","type":"boolean"},"disabled":{"title":"Disabled","type":"boolean"},"tokens_valid_after_timestamp":{"title":"Tokens
+  Valid After Timestamp","type":"integer"},"custom_claims":{"title":"Custom
+  Claims","type":"object"}}},"FirebaseVerificationLink":{"title":"FirebaseVerificationLink","required":["verification_link"],"type":"object","properties":{"verification_link":{"title":"Verification
+  Link","type":"string"}}},"Formulario":{"title":"Formulario","required":["id","especialidad_id","financiadora_id","campos","especialidad","financiadora"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"especialidad_id":{"title":"Especialidad
+  Id","type":"string","format":"uuid"},"financiadora_id":{"title":"Financiadora
+  Id","type":"string","format":"uuid"},"campos":{"title":"Campos","type":"array","items":{"$ref":"#/components/schemas/Campo"}},"especialidad":{"$ref":"#/components/schemas/Especialidad"},"financiadora":{"$ref":"#/components/schemas/Financiadora"}}},"FormularioCreate":{"title":"FormularioCreate","required":["especialidad_id","financiadora_id"],"type":"object","properties":{"especialidad_id":{"title":"Especialidad
+  Id","type":"string","format":"uuid"},"financiadora_id":{"title":"Financiadora
+  Id","type":"string","format":"uuid"},"campos":{"title":"Campos","type":"array","items":{"$ref":"#/components/schemas/CampoCreate"}}}},"FormularioUpdate":{"title":"FormularioUpdate","type":"object","properties":{"especialidad_id":{"title":"Especialidad
+  Id","type":"string","format":"uuid"},"financiadora_id":{"title":"Financiadora
+  Id","type":"string","format":"uuid"},"campos":{"title":"Campos","type":"array","items":{"$ref":"#/components/schemas/CampoUpdate"}}}},"HTTPValidationError":{"title":"HTTPValidationError","type":"object","properties":{"detail":{"title":"Detail","type":"array","items":{"$ref":"#/components/schemas/ValidationError"}}}},"InsumoBase":{"title":"InsumoBase","required":["cantidad","frecuencia","tipo_insumo_id"],"type":"object","properties":{"cantidad":{"title":"Cantidad","type":"integer"},"frecuencia":{"title":"Frecuencia","type":"string"},"tipo_insumo_id":{"title":"Tipo
+  Insumo
+  Id","type":"string"}}},"InsumoCreate":{"title":"InsumoCreate","required":["cantidad","frecuencia","tipo_insumo_id"],"type":"object","properties":{"cantidad":{"title":"Cantidad","type":"integer"},"frecuencia":{"title":"Frecuencia","type":"string"},"tipo_insumo_id":{"title":"Tipo
+  Insumo
+  Id","type":"string"}}},"InsumoUpdate":{"title":"InsumoUpdate","required":["tipo_insumo_id"],"type":"object","properties":{"cantidad":{"title":"Cantidad","type":"integer"},"frecuencia":{"title":"Frecuencia","type":"string"},"tipo_insumo_id":{"title":"Tipo
+  Insumo Id","type":"string"},"modulo_id":{"title":"Modulo
+  Id","type":"string"}}},"Internacion":{"title":"Internacion","required":["id"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"afiliado_id":{"title":"Afiliado
+  Id","anyOf":[{"type":"string"},{"type":"string","format":"uuid"}]},"particular_id":{"title":"Particular
+  Id","type":"string","format":"uuid"}}},"InternacionCreate":{"title":"InternacionCreate","required":["diagnosticos","servicios"],"type":"object","properties":{"afiliado_id":{"title":"Afiliado
+  Id","anyOf":[{"type":"string"},{"type":"string","format":"uuid"}]},"particular_id":{"title":"Particular
+  Id","type":"string","format":"uuid"},"diagnosticos":{"title":"Diagnosticos","type":"array","items":{"$ref":"#/components/schemas/DiagnosticoCreate"}},"servicios":{"title":"Servicios","type":"array","items":{"$ref":"#/components/schemas/ServicioCreate"}}}},"InternacionUpdate":{"title":"InternacionUpdate","required":["diagnosticos","servicios"],"type":"object","properties":{"afiliado_id":{"title":"Afiliado
+  Id","anyOf":[{"type":"string"},{"type":"string","format":"uuid"}]},"particular_id":{"title":"Particular
+  Id","type":"string","format":"uuid"},"diagnosticos":{"title":"Diagnosticos","type":"array","items":{"$ref":"#/components/schemas/DiagnosticoUpdate"}},"servicios":{"title":"Servicios","type":"array","items":{"$ref":"#/components/schemas/ServicioUpdate"}}}},"Login":{"title":"Login","required":["email","password"],"type":"object","properties":{"email":{"title":"Email","type":"string","format":"email"},"password":{"title":"Password","type":"string"}}},"ModuloCreate":{"title":"ModuloCreate","required":["nombre","estado","insumo","recurso","equipamiento"],"type":"object","properties":{"nombre":{"title":"Nombre","type":"string"},"estado":{"title":"Estado","type":"string"},"insumo":{"title":"Insumo","type":"array","items":{"$ref":"#/components/schemas/InsumoCreate"}},"recurso":{"title":"Recurso","type":"array","items":{"$ref":"#/components/schemas/RecursoCreate"}},"equipamiento":{"title":"Equipamiento","type":"array","items":{"$ref":"#/components/schemas/EquipamientoCreate"}}}},"Paciente":{"title":"Paciente","required":["codigo","persona"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"codigo":{"title":"Codigo","type":"string"},"persona":{"$ref":"#/components/schemas/Persona"},"familiares":{"title":"Familiares","type":"array","items":{}},"doc_clinicos":{"title":"Doc
+  Clinicos","type":"array","items":{}},"est_medicos":{"title":"Est
+  Medicos","type":"array","items":{}}}},"PacienteCreate":{"title":"PacienteCreate","required":["familiares"],"type":"object","properties":{"id_persona":{"title":"Id
+  Persona","type":"string","format":"uuid"},"persona":{"$ref":"#/components/schemas/PersonaCreate"},"familiares":{"title":"Familiares","type":"array","items":{"$ref":"#/components/schemas/FamiliarCreate"}},"documentos":{"title":"Documentos","type":"array","items":{"$ref":"#/components/schemas/DocumentoCreate"}},"estudios":{"title":"Estudios","type":"array","items":{"$ref":"#/components/schemas/EstudioCreate"}}}},"ParentescoTypes":{"title":"ParentescoTypes","enum":["padre","madre","hijo","sobrino","tio","abuelo","otro"],"type":"string","description":"An
+  enumeration."},"Permission":{"title":"Permission","required":["action"],"type":"object","properties":{"uid":{"title":"Uid","type":"string"},"action":{"title":"Action","type":"string"},"display_name":{"title":"Display
+  Name","type":"string"}}},"Persona":{"title":"Persona","required":["nombre","apellido","email","sexo","f_nacimiento","documentos"],"type":"object","properties":{"nombre":{"title":"Nombre","type":"string"},"apellido":{"title":"Apellido","type":"string"},"email":{"title":"Email","type":"string","format":"email"},"sexo":{"title":"Sexo","type":"string"},"f_nacimiento":{"title":"F
+  Nacimiento","type":"string","format":"date"},"telefono":{"title":"Telefono","type":"string"},"id":{"title":"Id","type":"string","format":"uuid"},"documentos":{"title":"Documentos","type":"array","items":{"$ref":"#/components/schemas/PersonaDocumentoIdentidad"}},"domicilios":{"title":"Domicilios","type":"array","items":{"$ref":"#/components/schemas/PersonaDomicilio"}}}},"PersonaCreate":{"title":"PersonaCreate","required":["nombre","apellido","email","sexo","f_nacimiento","documento"],"type":"object","properties":{"nombre":{"title":"Nombre","type":"string"},"apellido":{"title":"Apellido","type":"string"},"email":{"title":"Email","type":"string","format":"email"},"sexo":{"title":"Sexo","type":"string"},"f_nacimiento":{"title":"F
+  Nacimiento","type":"string","format":"date"},"telefono":{"title":"Telefono","type":"string"},"documento":{"$ref":"#/components/schemas/PersonaDocumentoIdentidadCreate"},"domicilios":{"title":"Domicilios","type":"array","items":{"$ref":"#/components/schemas/PersonaDomicilioCreate"}}}},"PersonaDocumentoIdentidad":{"title":"PersonaDocumentoIdentidad","required":["id_param_tipodoc","valor"],"type":"object","properties":{"id_param_tipodoc":{"title":"Id
+  Param
+  Tipodoc","type":"string"},"valor":{"title":"Valor","type":"string"},"id":{"title":"Id","anyOf":[{"type":"string","format":"uuid"},{"type":"string"}]}}},"PersonaDocumentoIdentidadCreate":{"title":"PersonaDocumentoIdentidadCreate","required":["id_param_tipodoc","valor"],"type":"object","properties":{"id_param_tipodoc":{"title":"Id
+  Param
+  Tipodoc","type":"string"},"valor":{"title":"Valor","type":"string"}}},"PersonaDomicilio":{"title":"PersonaDomicilio","required":["calle","id_admin_param_ciudad","id_param_tipo_domicilio","numeracion","piso","departamento"],"type":"object","properties":{"calle":{"title":"Calle","type":"string"},"codigo_postal":{"title":"Codigo
+  Postal","type":"string"},"geo_code":{"title":"Geo
+  Code","type":"string"},"id_admin_param_ciudad":{"title":"Id Admin Param
+  Ciudad","type":"string"},"id_param_tipo_domicilio":{"title":"Id Param Tipo
+  Domicilio","type":"string"},"numeracion":{"title":"Numeracion","type":"string"},"piso":{"title":"Piso","type":"string"},"departamento":{"title":"Departamento","type":"string"},"es_principal":{"title":"Es
+  Principal","type":"boolean","default":false},"id":{"title":"Id","anyOf":[{"type":"string","format":"uuid"},{"type":"string"}]}}},"PersonaDomicilioCreate":{"title":"PersonaDomicilioCreate","required":["calle","id_admin_param_ciudad","id_param_tipo_domicilio","numeracion","piso","departamento"],"type":"object","properties":{"calle":{"title":"Calle","type":"string"},"codigo_postal":{"title":"Codigo
+  Postal","type":"string"},"geo_code":{"title":"Geo
+  Code","type":"string"},"id_admin_param_ciudad":{"title":"Id Admin Param
+  Ciudad","type":"string"},"id_param_tipo_domicilio":{"title":"Id Param Tipo
+  Domicilio","type":"string"},"numeracion":{"title":"Numeracion","type":"string"},"piso":{"title":"Piso","type":"string"},"departamento":{"title":"Departamento","type":"string"},"es_principal":{"title":"Es
+  Principal","type":"boolean","default":false}}},"PrestadorCreate":{"title":"PrestadorCreate","required":["razon_social","n_cuit","email","telefono"],"type":"object","properties":{"razon_social":{"title":"Razon
+  Social","type":"string"},"sitio_web":{"title":"Sitio
+  Web","type":"string"},"n_cuit":{"title":"N
+  Cuit","type":"string"},"email":{"title":"Email","type":"string"},"telefono":{"title":"Telefono","type":"string"},"tel_movil":{"title":"Tel
+  Movil","type":"string"},"url_foto":{"title":"Url
+  Foto","type":"string"}}},"Recurso":{"title":"Recurso","required":["id","especialidad_id","cantidad","tiempo","cantidad_frecuencia","frecuencia","especialidad"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"especialidad_id":{"title":"Especialidad
+  Id","type":"string","format":"uuid"},"cantidad":{"title":"Cantidad","type":"integer"},"tiempo":{"title":"Tiempo","type":"integer"},"cantidad_frecuencia":{"title":"Cantidad
+  Frecuencia","type":"integer"},"frecuencia":{"title":"Frecuencia","type":"string"},"especialidad":{"$ref":"#/components/schemas/Especialidad"}}},"RecursoAsistencia":{"title":"RecursoAsistencia","required":["id","efector_id","servicio_id","recurso_id","cantidad","tiempo","cantidad_frecuencia","frecuencia","efector","recurso"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"efector_id":{"title":"Efector
+  Id","type":"string","format":"uuid"},"servicio_id":{"title":"Servicio
+  Id","type":"string","format":"uuid"},"recurso_id":{"title":"Recurso
+  Id","type":"string","format":"uuid"},"cantidad":{"title":"Cantidad","type":"integer"},"tiempo":{"title":"Tiempo","type":"integer"},"cantidad_frecuencia":{"title":"Cantidad
+  Frecuencia","type":"integer"},"frecuencia":{"title":"Frecuencia","type":"string"},"efector":{"$ref":"#/components/schemas/Efector"},"recurso":{"$ref":"#/components/schemas/Recurso"}}},"RecursoAsistenciaCreate":{"title":"RecursoAsistenciaCreate","required":["efector_id","recurso_id","cantidad","tiempo","cantidad_frecuencia","frecuencia"],"type":"object","properties":{"efector_id":{"title":"Efector
+  Id","type":"string","format":"uuid"},"servicio_id":{"title":"Servicio
+  Id","type":"string","format":"uuid"},"recurso_id":{"title":"Recurso
+  Id","type":"string","format":"uuid"},"cantidad":{"title":"Cantidad","type":"integer"},"tiempo":{"title":"Tiempo","type":"integer"},"cantidad_frecuencia":{"title":"Cantidad
+  Frecuencia","type":"integer"},"frecuencia":{"title":"Frecuencia","type":"string"}}},"RecursoAsistenciaUpdate":{"title":"RecursoAsistenciaUpdate","type":"object","properties":{"efector_id":{"title":"Efector
+  Id","type":"string","format":"uuid"},"servicio_id":{"title":"Servicio
+  Id","type":"string","format":"uuid"},"recurso_id":{"title":"Recurso
+  Id","type":"string","format":"uuid"},"cantidad":{"title":"Cantidad","type":"integer"},"tiempo":{"title":"Tiempo","type":"integer"},"cantidad_frecuencia":{"title":"Cantidad
+  Frecuencia","type":"integer"},"frecuencia":{"title":"Frecuencia","type":"string"}}},"RecursoCreate":{"title":"RecursoCreate","required":["especialidad_id","cantidad","tiempo","cantidad_frecuencia","frecuencia"],"type":"object","properties":{"especialidad_id":{"title":"Especialidad
+  Id","type":"string","format":"uuid"},"cantidad":{"title":"Cantidad","type":"integer"},"tiempo":{"title":"Tiempo","type":"integer"},"cantidad_frecuencia":{"title":"Cantidad
+  Frecuencia","type":"integer"},"frecuencia":{"title":"Frecuencia","type":"string"}}},"RegistroDigital":{"title":"RegistroDigital","required":["id","observacion","registro_digital_campos"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"observacion":{"title":"Observacion","type":"string"},"registro_digital_campos":{"title":"Registro
+  Digital
+  Campos","type":"array","items":{"$ref":"#/components/schemas/RegistroDigitalCampo"}}}},"RegistroDigitalCampo":{"title":"RegistroDigitalCampo","required":["id","campo_id","valor","campo"],"type":"object","properties":{"id":{"title":"Id","type":"string","format":"uuid"},"created_at":{"title":"Created
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069645"},"updated_at":{"title":"Updated
+  At","type":"string","format":"date-time","default":"2023-04-19T10:40:15.069675"},"deleted_by":{"title":"Deleted
+  By","type":"string","format":"uuid"},"campo_id":{"title":"Campo
+  Id","type":"string","format":"uuid"},"valor":{"title":"Valor","type":"string"},"campo":{"$ref":"#/components/schemas/Campo"}}},"RegistroDigitalCampoCreate":{"title":"RegistroDigitalCampoCreate","required":["campo_id","valor"],"type":"object","properties":{"campo_id":{"title":"Campo
+  Id","type":"string","format":"uuid"},"valor":{"title":"Valor","type":"string"}}},"RegistroDigitalCreate":{"title":"RegistroDigitalCreate","required":["observacion","registro_digital_campos"],"type":"object","properties":{"observacion":{"title":"Observacion","type":"string"},"registro_digital_campos":{"title":"Registro
+  Digital
+  Campos","type":"array","items":{"$ref":"#/components/schemas/RegistroDigitalCampoCreate"}}}},"RegistroDigitalUpdate":{"title":"RegistroDigitalUpdate","type":"object","properties":{"observacion":{"title":"Observacion","type":"string"},"registro_digital_campos":{"title":"Registro
+  Digital
+  Campos","type":"array","items":{"$ref":"#/components/schemas/RegistroDigitalCampoCreate"}}}},"Role":{"title":"Role","required":["name"],"type":"object","properties":{"uid":{"title":"Uid","type":"string"},"name":{"title":"Name","type":"string"},"display_name":{"title":"Display
+  Name","type":"string"},"permissions":{"title":"Permissions","type":"array","items":{"type":"string"},"default":[]}}},"ServicioCreate":{"title":"ServicioCreate","required":["modulo_id","prestador_id","f_desde","f_hasta","horario_sugerido","f_autorizacion","num_autorizacion"],"type":"object","properties":{"modulo_id":{"title":"Modulo
+  Id","type":"string","format":"uuid"},"prestador_id":{"title":"Prestador
+  Id","type":"string","format":"uuid"},"internacion_id":{"title":"Internacion
+  Id","type":"string","format":"uuid"},"f_desde":{"title":"F
+  Desde","type":"string","format":"date"},"f_hasta":{"title":"F
+  Hasta","type":"string","format":"date"},"horario_sugerido":{"title":"Horario
+  Sugerido","type":"string"},"f_autorizacion":{"title":"F
+  Autorizacion","type":"string","format":"date"},"num_autorizacion":{"title":"Num
+  Autorizacion","type":"string"}}},"ServicioUpdate":{"title":"ServicioUpdate","type":"object","properties":{"modulo_id":{"title":"Modulo
+  Id","type":"string","format":"uuid"},"prestador_id":{"title":"Prestador
+  Id","type":"string","format":"uuid"},"internacion_id":{"title":"Internacion
+  Id","type":"string","format":"uuid"},"f_desde":{"title":"F
+  Desde","type":"string","format":"date"},"f_hasta":{"title":"F
+  Hasta","type":"string","format":"date"},"horario_sugerido":{"title":"Horario
+  Sugerido","type":"string"},"f_autorizacion":{"title":"F
+  Autorizacion","type":"string","format":"date"},"num_autorizacion":{"title":"Num
+  Autorizacion","type":"string"},"id":{"title":"Id","type":"string","format":"uuid"}}},"TipoInsumoCreate":{"title":"TipoInsumoCreate","required":["nombre"],"type":"object","properties":{"nombre":{"title":"Nombre","type":"string"}}},"ValidationError":{"title":"ValidationError","required":["loc","msg","type"],"type":"object","properties":{"loc":{"title":"Location","type":"array","items":{"anyOf":[{"type":"string"},{"type":"integer"}]}},"msg":{"title":"Message","type":"string"},"type":{"title":"Error
+  Type","type":"string"}}}},"securitySchemes":{"OAuth2PasswordBearer":{"type":"oauth2","flows":{"password":{"scopes":{},"tokenUrl":"/v1/auth/token"}}}}},"tags":[{"name":"authorization","description":"Endpoints
+  related to authentication."},{"name":"permissions","description":"Endpoints
+  related to permissions."},{"name":"roles","description":"Endpoints related to
+  roles."},{"name":"users","description":"Endpoints related to users."}]}'
+contentType: yaml

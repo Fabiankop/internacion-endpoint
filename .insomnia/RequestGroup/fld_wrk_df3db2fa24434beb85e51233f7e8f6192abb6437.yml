@@ -1,0 +1,10 @@
+_id: fld_wrk_df3db2fa24434beb85e51233f7e8f6192abb6437
+type: RequestGroup
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729494
+name: authorization
+description: Endpoints related to authentication.
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: 100

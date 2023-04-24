@@ -1,0 +1,27 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6197008923b
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729482
+url: "{{ base_url }}/v1/{{ id_paciente }}/estudios/"
+name: GET estudios de un paciente
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: skip
+    disabled: true
+    value: string
+  - name: limit
+    disabled: true
+    value: "50"
+headers: []
+authentication: {}
+metaSortKey: 700
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

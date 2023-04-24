@@ -1,0 +1,21 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619309c5905
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729474
+url: "{{ base_url }}/v1/prestador/{{ id_prestador }}"
+name: "GET BY ID Prestador "
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: 3100
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

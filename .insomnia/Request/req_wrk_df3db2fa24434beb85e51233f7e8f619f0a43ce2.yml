@@ -1,0 +1,21 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619f0a43ce2
+type: Request
+parentId: fld_b3bf840fc9814ccfada667c8be8e12b7
+modified: 1682093683670
+created: 1681919729482
+url: "{{ base_url }}/v1/paciente/{{ id_paciente }}"
+name: GET Paciente
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: 643.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

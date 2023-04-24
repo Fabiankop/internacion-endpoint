@@ -1,0 +1,86 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619d27336b4
+type: Request
+parentId: fld_b3bf840fc9814ccfada667c8be8e12b7
+modified: 1682093819617
+created: 1681919729483
+url: "{{ base_url }}/v1/paciente/"
+name: Post Paciente
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    { 
+    	"id_persona": "e12a61bc-5aae-49fa-94d9-db6f0f19c063",
+      "persona": {
+        "nombre": "fabian",
+        "apellido": "rodriguez",
+        "sexo": "masculino",
+    		"email": "paciente@gmail.com",
+        "f_nacimiento": "1987-04-04",
+        "telefono": "3172885469",
+        "documento": {
+          "id_param_tipodoc": "dni",
+          "valor": "1032390537"
+        },
+    		"domicilios": [{
+    			"calle": "siemore viva",
+    			"id_admin_param_ciudad": "1",
+    			"id_param_tipo_domicilio": "1",
+    			"numeracion": "123",
+    			"piso": "2",
+    			"departamento": "203"
+    		}]
+      },
+      "familiares": [{
+    		"nombre": "carlos",
+    		"apellido": "peralta",
+    		"id_param_tipodoc": "dni",
+        "num_documento": "1033113813",
+    		"sexo": "masculino",
+    		"parentesco": "padre",
+    		"f_nacimiento": "2023-04-04",
+    		"tel_movil": "3172885467"
+      },
+    	{
+    		"nombre": "maria",
+    		"apellido": "suarez",
+    		"id_param_tipodoc": "dni",
+        "num_documento": "1033113812",
+    		"sexo": "femenino",
+    		"parentesco": "madre",
+    		"f_nacimiento": "2023-04-04",
+    		"tel_movil": "3172885467"
+      }],
+      "documentos": [{
+        "nombre": "exament rayos xyz",
+        "fecha": "2023-04-04",
+        "url_adjunto": "url_string"
+      },
+    	{
+        "nombre": "exament rayos gama",
+        "fecha": "2023-04-04",
+        "url_adjunto": "url_rayos gama"
+      }],
+    	"estudios": [
+        {
+          "nombre": "estudio bilirrubina",
+          "fecha": "2023-04-01",
+          "resultado": "buen resultado",
+          "url_adjunto": "url/estudio"
+        }
+      ]
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 593.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

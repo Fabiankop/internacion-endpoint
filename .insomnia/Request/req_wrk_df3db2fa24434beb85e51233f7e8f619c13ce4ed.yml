@@ -1,0 +1,30 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619c13ce4ed
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729478
+url: "{{ base_url }}/v1/{{ id_paciente }}/documentos/"
+name: POST documento de un paciente
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "nombre": "string",
+      "fecha": "string",
+      "url_adjunto": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 2000
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

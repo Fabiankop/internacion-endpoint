@@ -1,0 +1,21 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619cbfbf83f
+type: Request
+parentId: fld_a3c840f67a6f4e0fbcacc622837685c2
+modified: 1682103837810
+created: 1681919729461
+url: "{{ base_url }}/v1/internacion/{{ id_internacion }}"
+name: "GET BY ID internacion "
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: 681.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

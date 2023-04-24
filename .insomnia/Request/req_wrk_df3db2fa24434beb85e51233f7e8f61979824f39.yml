@@ -1,0 +1,31 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f61979824f39
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729472
+url: "{{ base_url }}/v1/insumo/"
+name: "POST Customer "
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "cantidad": 0,
+      "frecuencia": "string",
+      "tipo_insumo_id": "string",
+      "modulo_id": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 3700
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

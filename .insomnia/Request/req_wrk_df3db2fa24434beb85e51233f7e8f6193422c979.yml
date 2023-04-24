@@ -1,0 +1,24 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6193422c979
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729469
+url: "{{ base_url }}/v1/modulo/{{ id_financiadora }}"
+name: "GET BY ID Modulos "
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: id_modulo
+    disabled: false
+    value: string
+headers: []
+authentication: {}
+metaSortKey: 4500
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

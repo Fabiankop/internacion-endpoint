@@ -1,0 +1,27 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619d7481a89
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729476
+url: "{{ base_url }}/v1/financiadora/"
+name: "GET Financiadoras "
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: skip
+    disabled: true
+    value: "0"
+  - name: limit
+    disabled: true
+    value: "100"
+headers: []
+authentication: {}
+metaSortKey: 2600
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

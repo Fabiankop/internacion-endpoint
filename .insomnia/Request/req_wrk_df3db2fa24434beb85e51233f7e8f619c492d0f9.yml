@@ -1,0 +1,25 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619c492d0f9
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632554
+created: 1681919729465
+url: "{{ base_url }}/v1/recurso-asistencia/{{ id_recurso_asistencia }}/asistencia"
+name: POST asistencia por recurso_asistencia
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: "null"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: 5600
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

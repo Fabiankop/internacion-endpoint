@@ -1,0 +1,27 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f619772c1efa
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632553
+created: 1681919729477
+url: "{{ base_url }}/v1/persona/"
+name: GET Afiliaciones
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: tipo_documento
+    disabled: true
+    value: string
+  - name: numero_documento
+    disabled: true
+    value: string
+headers: []
+authentication: {}
+metaSortKey: 2200
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

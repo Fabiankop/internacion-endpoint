@@ -1,0 +1,22 @@
+_id: req_wrk_df3db2fa24434beb85e51233f7e8f6193681fb66
+type: Request
+parentId: wrk_df3db2fa24434beb85e51233f7e8f619
+modified: 1682093632554
+created: 1681919729464
+url: "{{ base_url }}/v1/recurso-asistencia/{{ id_recurso_asistencia
+  }}/asistencia/{{ id_asistencia }}"
+name: GET asistencia por id
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: 5800
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
